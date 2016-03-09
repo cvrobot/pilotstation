@@ -1,0 +1,6 @@
+//Android projects
+//include ':Android'
+
+include ':StarterApp'
+
+//include ':library'

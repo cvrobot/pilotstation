@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+
+//Log levels values
+def logLevelVerbose = 2;
+def logLevelDebug = 3;
+def logLevelInfo = 4;
+def logLevelWarn = 5;
+def logLevelError = 6;
+def logLevelAssert = 7;
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "int", "LOG_FILE_LEVEL", "$logLevelDebug"
+    }
+    sourceSets {
+        main {
+            aidl.srcDirs = ['src/main/java']
+            assets.srcDirs = ['assets']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+/*
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }*/
+    //useLibrary  'org.apache.http.legacy'
+}
+
+dependencies {
+    compile 'com.google.android.gms:play-services-analytics:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
+
+    compile 'org.aspectj:aspectjweaver:1.6.10'//for minifyEnabled
+    compile 'org.zeromq:jeromq:+'
+
+    //compile 'com.android.support:support-v4:23.0.0'
+    //compile 'com.android.support:appcompat-v7:23.0.0'
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/j2xx.jar')//for usb
+    //compile files('libs/jeromq-0.3.4.jar')
+    compile files('libs/droneapi-java-0.3-SNAPSHOT.jar')
+    compile files('libs/protobuf-java-2.5.0.jar')
+
+    //MP4 generation library
+    compile files('libs/isoparser-1.1.7.jar')
+    //compile 'com.googlecode.mp4parser:isoparser:1.1.7' //isoparser-1.1.7
+
+    //Java semver library used by solo
+    compile files('libs/java-semver-0.9.0.jar')
+    //compile 'com.github.zafarkhaja:java-semver:0.9.0'//java-semver-0.9.0
+
+    compile files('libs/jsch-0.1.51.jar')
+    //compile 'com.jcraft:jsch:0.1.51'//ssh
+    compile 'com.jcraft:jzlib:1.1.3'//ssh
+
+    compile files('libs/timber-3.1.0.jar')
+    //compile 'com.jakewharton.timber:timber:3.1.0'//timber for log print
+
+
+    //testCompile 'junit:junit:4.12'
+    //testCompile "org.robolectric:robolectric:3.0"
+}

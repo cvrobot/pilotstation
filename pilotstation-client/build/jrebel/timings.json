@@ -1,0 +1,45 @@
+{
+    "allTimings": [
+        {
+            "start": 1457322759704,
+            "type": "Configuration",
+            "report": true,
+            "finish": 1457322760715,
+            "project": null,
+            "name": null
+        },
+        {
+            "start": 1457322760926,
+            "type": "Delete",
+            "report": false,
+            "finish": 1457322761318,
+            "project": ":Android",
+            "name": "clean"
+        },
+        {
+            "start": 1457322759704,
+            "type": "Total",
+            "report": true,
+            "finish": 1457322761321,
+            "project": null,
+            "name": null
+        }
+    ],
+    "timings": [
+        {
+            "start": 1457322759704,
+            "type": "Configuration",
+            "finish": 1457322760715,
+            "timeMs": 1011,
+            "count": 1
+        },
+        {
+            "start": 1457322759704,
+            "type": "Total",
+            "finish": 1457322761321,
+            "timeMs": 1617,
+            "count": 1
+        }
+    ],
+    "capturedAt": 1457322761321
+}
